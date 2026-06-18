@@ -22,7 +22,7 @@ El código fue diseñado bajo los estándares evaluados en el curso, aplicando:
 
 ---
 
-## 🚀 Cómo Ejecutar el Programa
+## Cómo Ejecutar el Programa
 1. Asegúrate de tener instalado **Python 3,14**
 2. Descarga el archivo principal del repositorio: `main.py`
 3. Abre tu terminal o consola de comandos en la carpeta del archivo
