@@ -8,7 +8,7 @@ El programa cumple con las siguientes operaciones integradas:
 1. **Agregar tareas** con estado inicial "Pendiente"
 2. **Listar tareas registradas** de forma ordenada
 3. **Marcar tareas como completadas** modificando su estado interno
-4. **Eliminar tareas** del registro general (en desarrollo)
+4. **Eliminar tareas** del registro general
 5. **Salir del sistema** asegurando un cierre limpio del bucle principal
 
 ---
