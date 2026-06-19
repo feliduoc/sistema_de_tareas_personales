@@ -1,4 +1,9 @@
 print("--- Bienvenido al Sistema de Tareas Personales :D ---")
+#lunes 15, cree el archivo ,py y puse el mensaje de bienvenido 
+# martes 16, hasta ahora dejare la estructura del menu, al siguiente dia actualizare el menu semi funcional :p
+# miercoles 17, implemente la opcion 1 y 2 funcionales 
+# Jueves 18: implementamos la opcion 3 jeje
+# viernes 19: finalmente se implemento la opcion 4 para borrar una tarea jejeje
 
 lista_tareas = []
 
@@ -11,7 +16,7 @@ def mostrar_menu():
     print("4. Eliminar tarea")
     print("5. Salir del sistema")
      
-  #variable que sirve para registrar tareas 
+  # funcion que sirve para registrar tareas 
 def agregar_tarea():
     print("\n--- Agregar Tarea ---")
     nombre_tarea = input("Ingrese el nombre de la tarea: ").strip()
@@ -24,7 +29,31 @@ def agregar_tarea():
     lista_tareas.append(nueva_tarea)
     print(f" Tarea '{nombre_tarea}' agregada con éxito.")
 
-#pa mostrar tareas registradas
+# funcion para eliminar tareas jejeje
+def eliminar_tarea():
+    print("\n--- eliminar tarea ---")
+
+    if len(lista_tareas) == 0:
+        print("No hay tareas disponibles para eliminar.")
+        return
+    
+    listar_tareas()
+
+    try:
+        opcion_id = input("\nIngrese el número de la tarea que desea eliminar: ").strip()
+        indice = int(opcion_id) - 1 
+        if indice < 0 or indice >= len(lista_tareas):
+            print("Error: El número de tarea no existe en el sistema.")
+            return
+        
+        tarea_eliminada = lista_tareas.pop(indice)
+        print(f" La tarea '{tarea_eliminada['nombre']}' ha sido eliminada con éxito.")
+
+    except ValueError:
+        print("Error: Debe ingresar un número entero positivo válido.")
+
+
+# pa mostrar tareas registradas
 def listar_tareas():
     print("\n--- Lista de tareas ---")
     if len(lista_tareas) == 0:
@@ -36,7 +65,6 @@ def listar_tareas():
         print(f"{i + 1}. [{tarea['estado']}] {tarea['nombre']}")
     return True
 
-# Jueves 18: Nueva función para actualizar el estado de las tareas a Completada
 def completar_tarea():
     print("\n--- Marcar Tarea como Completada ---")
 
@@ -68,9 +96,6 @@ def iniciar_programa():
         mostrar_menu()
         opcion = input("Seleccione una opción (1-5): ")
         
-        # hasta ahora dejare la estructura del menu, al siguiente dia actualizare el menu semi funcional :p
-        # miercoles 17, implemente la opcion 1 y 2 funcionales 
-        # Jueves 18: implementamos la opcion 3 jeje
         if opcion == "1":
             agregar_tarea()
         elif opcion == "2":
@@ -78,7 +103,7 @@ def iniciar_programa():
         elif opcion == "3":
             completar_tarea()
         elif opcion == "4":
-            print("\n[en desarrollo] Aquí se eliminarán las tareas")
+            eliminar_tarea()
         elif opcion == "5":
             print("\n¡Gracias por utilizar el sistema!")
             print("Saliendo del programa")
