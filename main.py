@@ -27,14 +27,14 @@ def agregar_tarea():
 
     nueva_tarea = {"nombre": nombre_tarea, "estado": "Pendiente"} 
     lista_tareas.append(nueva_tarea)
-    print(f" Tarea '{nombre_tarea}' agregada con éxito.")
+    print(f" Tarea '{nombre_tarea}' agregada con éxito")
 
 # funcion para eliminar tareas jejeje
 def eliminar_tarea():
     print("\n--- eliminar tarea ---")
 
     if len(lista_tareas) == 0:
-        print("No hay tareas disponibles para eliminar.")
+        print("No hay tareas disponibles para eliminar")
         return
     
     listar_tareas()
@@ -43,14 +43,14 @@ def eliminar_tarea():
         opcion_id = input("\nIngrese el número de la tarea que desea eliminar: ").strip()
         indice = int(opcion_id) - 1 
         if indice < 0 or indice >= len(lista_tareas):
-            print("Error: El número de tarea no existe en el sistema.")
+            print("Error: El número de tarea no existe en el sistema")
             return
         
         tarea_eliminada = lista_tareas.pop(indice)
-        print(f" La tarea '{tarea_eliminada['nombre']}' ha sido eliminada con éxito.")
+        print(f" La tarea '{tarea_eliminada['nombre']}' ha sido eliminada con éxito")
 
     except ValueError:
-        print("Error: Debe ingresar un número entero positivo válido.")
+        print("Error: Debe ingresar un número entero positivo válido")
 
 
 # pa mostrar tareas registradas
@@ -69,7 +69,7 @@ def completar_tarea():
     print("\n--- Marcar Tarea como Completada ---")
 
     if len(lista_tareas) == 0:
-        print("No hay tareas guardadas para modificar.")
+        print("No hay tareas guardadas para modificar")
         return
     listar_tareas()
 
@@ -77,14 +77,14 @@ def completar_tarea():
         opcion_id = input("\nIngrese el número de la tarea que desea completar: ").strip()
         indice = int(opcion_id) - 1 
         if indice < 0 or indice >= len(lista_tareas):
-            print("Error: El número de tarea no existe en el sistema.")
+            print("Error: El número de tarea no existe en el sistema")
             return
         
         lista_tareas[indice]["estado"] = "Completada"
-        print(f" Genial! La tarea '{lista_tareas[indice]['nombre']}' ahora está Completada.")
+        print(f" Genial! La tarea '{lista_tareas[indice]['nombre']}' ahora está Completada")
         
     except ValueError:
-        print("Error: Debe ingresar un número entero positivo válido.")
+        print("Error: Debe ingresar un número entero positivo válido")
 
 # mientras hacia el programa descubri que para hacer un bucle mas basico con funciones
 # usar continuar y agregar True y false es mas practico como ahora
